@@ -12,9 +12,9 @@ ARG group=minecraft
 ARG uid=1000
 ARG gid=1000
 
-RUN apt -y update
-RUN apt -y install openjdk-16-jre-headless
-RUN apt -y install wget
+RUN apt-get -y update
+RUN apt-get -y install openjdk-14-jre-headless
+RUN apt-get -y install wget
 
 RUN wget https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar -O paper.jar
 RUN echo "java -Xms$XMS -Xmx$XMX -jar paper.jar -nogui" > start.sh
