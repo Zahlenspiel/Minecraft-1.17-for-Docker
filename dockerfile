@@ -21,7 +21,7 @@ RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends openjdk-11-jre-headless
-RUN apt-get install -y wget
+RUN apt-get install -y curl
 
 USER ${user}
 WORKDIR /minecraft
