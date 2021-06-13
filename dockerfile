@@ -14,6 +14,9 @@ ARG gid=1000
 
 RUN groupadd -g $gid -o $group
 RUN useradd -M -d /minecraft -u $uid -g $gid -o -s /bin/bash $user
+RUN chown -R minecraft:minecraft /minecraft
+RUN chmod -R ug+rwx /minecraft
+
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 
 RUN apt-get update
