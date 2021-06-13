@@ -26,6 +26,7 @@ USER ${user}
 WORKDIR /minecraft
 RUN curl -o paper.jar https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/777/downloads/paper-1.16.5-777.jar
 RUN echo "java -Xms${XMS} -Xmx${XMX} -jar paper.jar -nogui" > start.sh
+RUN echo "eula=true" > eula.txt
 RUN chmod -R ug+rwx /minecraft
 
 VOLUME ["/minecraft"]
