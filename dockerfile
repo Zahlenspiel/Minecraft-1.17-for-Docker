@@ -28,4 +28,4 @@ RUN apt-get install -y curl
 RUN curl -o paper.jar https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar
 RUN echo "java -Xms${XMS} -Xmx${XMX} -jar paper.jar -nogui" > start.sh
 
-CMD start.sh
+CMD ./start.sh
