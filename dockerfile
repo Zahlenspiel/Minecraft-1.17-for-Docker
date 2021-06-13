@@ -1,7 +1,6 @@
 # Dockerfile for MC
 FROM debian:buster-slim
 MAINTAINER MarcJansen <jansenmarc1998@gmail.com>
-VOLUME ["/minecraft"]
 WORKDIR /minecraft
 EXPOSE 25565
 
@@ -27,3 +26,5 @@ RUN apt-get install -y curl
 #WORKDIR /minecraft
 RUN curl -o paper.jar https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar
 RUN echo "java -Xms${XMS} -Xmx${XMX} -jar paper.jar -nogui" > start.sh
+
+VOLUME ["/minecraft"]
