@@ -24,7 +24,8 @@ RUN apt-get install -y curl
 
 #USER ${user}
 #WORKDIR /minecraft
-RUN curl -o paper.jar https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar
+RUN curl -o paper.jar https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/777/downloads/paper-1.16.5-777.jar
 RUN echo "java -Xms${XMS} -Xmx${XMX} -jar paper.jar -nogui" > start.sh
 
 VOLUME ["/minecraft"]
+CMD ./start.sh
