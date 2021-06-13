@@ -25,7 +25,7 @@ RUN apt-get install -y wget
 
 USER ${user}
 WORKDIR /minecraft
-RUN wget https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar -O paper.jar
+RUN curl -o paper.jar https://papermc.io/ci/job/Paper-1.17/lastSuccessfulBuild/artifact/paperclip.jar
 RUN echo "java -Xms${XMS} -Xmx${XMX} -jar paper.jar -nogui" > start.sh
 
 CMD start.sh
