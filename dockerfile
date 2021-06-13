@@ -14,9 +14,10 @@ ARG gid=1000
 
 RUN groupadd -g $gid -o $group
 RUN useradd -M -d /minecraft -u $uid -g $gid -o -s /bin/bash $user
+RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 
 RUN apt-get update
-RUN apt-get install -y openjdk-11-jre-headless
+RUN apt-get install -y --no-install-recommends openjdk-11-jre-headless
 RUN apt-get install -y wget
 
 USER $user
